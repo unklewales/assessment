@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Password Strength Checker</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <h1>Password Strength Checker</h1>
+    <form>
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" />
+      <button type="submit" id="checkPassWord">Check</button>
+      <div id="feedback"></div>
+    </form>
+    <div id="feedback"></div>
+
+    <script>
+        //target element
+      let passWord = document.getElementById("password");
+      let checkPassWord = document.getElementById("checkPassWord");
+let feedBack = document.getElementById("feedback");
+     //addlistener
+checkPassWord.addEventListener("click", passWordChecker);
+//set counter
+let score = 0;
+//
+function passWordChecker(e) {
+      e.preventDefault();
+      let passWordStr = passWord.value;
+//strong Ag7$yhuhj
+//medium Adgtyfhhui
+//weak AAAAAAA
+
+if (passWordStr.length >= 8) {
+    score = score + 1;
+}
+if (passWordStr.match(/[A-Z]/)) {
+    score = score + 1;
+}
+if (passWordStr.match(/[a-z]/)) {
+    score = score + 1;
+}
+if (passWordStr.match(/[^A-Za-z0-9]/)) {
+    score = score + 1;
+}
+if (passWordStr.match(/[0-9]/)) {
+    score = score + 1;
+}
+
+if (score == 5) {
+    feedBack.innerHTML = "Strong Password";
+    feedBack.style.color = "green";
+}else if (score >= 3){
+    feedBack.innerHTML = "Medium Password";
+    feedBack.style.color = "orange";
+}else if (score <= 2 ){
+    feedBack.innerHTML = "Weak Password";  
+    feedBack.style.color = "red";
+}
+}
+
+     /* let strongChecker = passWordStr.match(strongPassWord);
+      let mediumChecker = passWordStr.match(mediumPassWord);
+      let weakChecker = passWordStr.match(weakPassWord);
+
+      if (strongChecker) {
+        feedBack.innerHTML = "Strong Password";
+      } else if(mediumChecker) {
+        feedBack.innerHTML = "Medium Password";
+      }else{
+        feedBack.innerHTML = "Weak Password";
+      }
+
+    }*/
+    </script>
+  </body>
+  </html>

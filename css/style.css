@@ -1,0 +1,25 @@
+form{
+margin: 100px 500px;
+}
+h1{
+    text-align: center;
+}
+input{
+    width: 90%;
+    height: 50px;
+    display: inline;
+    border-radius: 5px;
+}
+label{
+    font-size: 1.5rem;
+}
+#checkPassWord{
+    display: block;
+    margin: 40px 110px;
+    border-radius: 5px;
+    padding: 10px 30px;
+}
+#feedback{
+    text-align: center;
+    margin-right: 40px;
+}
